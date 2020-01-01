@@ -1,0 +1,70 @@
+$primary-color: #B01152;
+$break-point: 800px;
+
+@mixin links {
+  font-size: 15px;
+  color: $primary-color;
+  display: inline-block;
+  @media (min-width: $break-point) {
+    font-size: 18px;
+  }
+}
+
+.row {
+  align-items: center;
+  border: 2px solid $primary-color;
+  border-radius: 30px;
+  padding: 20px;
+  margin: 10px;
+  display: flex;
+
+  &__info {
+    display: inline-block;
+    margin: auto 0 auto 20px;
+
+    &-title {
+      font-size: 20px;
+      margin: 10px 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-decoration: none;
+      color: $primary-color;
+      @media (min-width: $break-point) {
+        font-size: 25px;
+      }
+    }
+
+    &-more {
+      @media (min-width: $break-point) {
+        display: flex;
+      }
+
+      &--published {
+        font-size: 15px;
+        margin-bottom: 10px;
+        order: 2;
+        @media (min-width: $break-point) {
+          margin-right: 20px;
+          font-size: 18px;
+        }
+      }
+
+      &--author {
+        @include links;
+        margin-right: 20px;
+        order: 1;
+      }
+
+      &--flickr {
+        @include links;
+        order: 3;
+      }
+
+    }
+
+  }
+
+}
