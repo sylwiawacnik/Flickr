@@ -1,6 +1,18 @@
 import '../scss/styles.scss';
+import $ from 'jquery';
 
 var list = document.getElementById('list');
+
+const myCallback = (json) => {
+    console.log(json);
+};
+
+$.ajax({
+    url: 'https://api.flickr.com/services/feeds/photos_public.gne',
+    dataType: 'jsonp',
+    data: {"format": "json"},
+    jsonpCallback: 'jsonFlickrFeed'
+}).then(myCallback);
 
 
 for (let i = 0; i < 5; i++) {
