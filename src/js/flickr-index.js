@@ -1,3 +1,4 @@
 import '../scss/flickr.scss';
-import $ from 'jquery';
 
+let description = localStorage.getItem('itemDescription');
+document.getElementById('flickr').innerHTML = description;

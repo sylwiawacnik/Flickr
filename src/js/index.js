@@ -16,6 +16,7 @@ const myCallback = (json) => {
         let image = document.createElement('img');
         image.setAttribute('src', item.media.m);
         image.onclick = function () {
+            localStorage.setItem('itemDescription', item.description);
             window.open('/Flickr/flickr-index.html', '_blank');
         };
         image.classList.add('row__image');
@@ -24,10 +25,13 @@ const myCallback = (json) => {
         info.classList.add('row__info');
 
         let title = document.createElement('a');
-        title.href = '/Flickr/flickr-index.html';
-        title.target = "_blank";
         title.appendChild(document.createTextNode(item.title));
         title.classList.add('row__info-title');
+        title.onclick = function (e) {
+            e.preventDefault();
+            localStorage.setItem('itemDescription', item.description);
+            window.open('/Flickr/flickr-index.html', '_blank');
+        };
 
         let more = document.createElement('div');
         more.classList.add('row__info-more');
