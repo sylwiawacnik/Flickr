@@ -1,11 +1,12 @@
 $primary-color: #B01152;
-$break-point: 800px;
+$break-point-s: 800px;
+$break-point-m: 1024px;
 
 @mixin links {
   font-size: 15px;
   color: $primary-color;
   display: inline-block;
-  @media (min-width: $break-point) {
+  @media (min-width: $break-point-s) {
     font-size: 18px;
   }
 }
@@ -17,6 +18,21 @@ $break-point: 800px;
   padding: 20px;
   margin: 10px;
   display: flex;
+
+  &__image {
+    max-height: 90px;
+    max-width: 120px;
+
+    @media (min-width: $break-point-s) {
+      max-height: 200px;
+      max-width: 200px;
+    }
+
+    @media (min-width: $break-point-m) {
+      max-height: 300px;
+      max-width: 300px;
+    }
+  }
 
   &__info {
     display: inline-block;
@@ -31,14 +47,17 @@ $break-point: 800px;
       overflow: hidden;
       text-overflow: ellipsis;
       text-decoration: none;
+      width: 90%;
+      word-wrap: break-word;
+      word-break: break-word;
       color: $primary-color;
-      @media (min-width: $break-point) {
+      @media (min-width: $break-point-s) {
         font-size: 25px;
       }
     }
 
     &-more {
-      @media (min-width: $break-point) {
+      @media (min-width: $break-point-s) {
         display: flex;
       }
 
@@ -46,7 +65,7 @@ $break-point: 800px;
         font-size: 15px;
         margin-bottom: 10px;
         order: 2;
-        @media (min-width: $break-point) {
+        @media (min-width: $break-point-s) {
           margin-right: 20px;
           font-size: 18px;
         }
