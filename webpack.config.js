@@ -5,11 +5,14 @@ const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 module.exports = {
 
-    entry: './src/js/index.js',
+    entry: {
+        bundle: './src/js/index.js',
+        bundle_flickr: './src/js/flickr-index.js'
+    },
 
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: '[name].js'
     },
 
     mode: 'development',

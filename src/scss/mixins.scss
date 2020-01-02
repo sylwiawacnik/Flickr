@@ -1,0 +1,9 @@
+@mixin links {
+  font-size: 15px;
+  color: $primary-color;
+  display: inline-block;
+
+  @media (min-width: $break-point-s) {
+    font-size: 18px;
+  }
+}

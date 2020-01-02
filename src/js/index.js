@@ -1,26 +1,22 @@
-import '../scss/styles.scss';
+import '../scss/homepage.scss';
 import $ from 'jquery';
 import moment from 'moment';
 
 var list = document.getElementById('list');
 
 const myCallback = (json) => {
-    // console.log(json.items);
 
     var items = json.items;
 
     items.forEach((item) => {
-
-        // console.log(item);
 
         let row = document.createElement('div');
         row.classList.add('row');
 
         let image = document.createElement('img');
         image.setAttribute('src', item.media.m);
-        //zrób swoją strone
         image.onclick = function () {
-            window.open('http://myappcom', '_blank');
+            window.open('/Flickr/flickr-index.html', '_blank');
         };
         image.classList.add('row__image');
 
@@ -28,8 +24,7 @@ const myCallback = (json) => {
         info.classList.add('row__info');
 
         let title = document.createElement('a');
-        //zrób swoją strone
-        title.href = 'http://myappcom';
+        title.href = '/Flickr/flickr-index.html';
         title.target = "_blank";
         title.appendChild(document.createTextNode(item.title));
         title.classList.add('row__info-title');
