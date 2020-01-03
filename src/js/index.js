@@ -1,8 +1,18 @@
 import '../scss/homepage.scss';
 import $ from 'jquery';
 import moment from 'moment';
+import Logo from '../images/logo-flick.png';
+
+
+let header = document.getElementById('header');
+header.classList.add('header');
+let logo = document.createElement('img');
+logo.setAttribute('src', 'dist/' + Logo);
+header.append(logo);
+
 
 var list = document.getElementById('list');
+
 
 const myCallback = (json) => {
 

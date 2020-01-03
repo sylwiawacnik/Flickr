@@ -3,12 +3,10 @@
 
 .row {
   align-items: center;
-  border: 2px solid $primary-color;
-  border-radius: 30px;
-  background-color: $third-color;
   padding: 20px;
   margin: 10px;
   display: flex;
+  @include frame;
 
   &__image {
     border: 2px solid $primary-color;
@@ -40,9 +38,8 @@
       text-overflow: ellipsis;
       text-decoration: none;
       width: 90%;
-      word-wrap: break-word;
-      word-break: break-word;
       color: $primary-color;
+      @include break-word;
 
       @media (min-width: $break-point-s) {
         font-size: 25px;

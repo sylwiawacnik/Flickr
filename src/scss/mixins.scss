@@ -7,3 +7,20 @@
     font-size: 18px;
   }
 }
+
+@mixin frame {
+  border: 2px solid $primary-color;
+  border-radius: 30px;
+  background-color: $third-color;
+}
+
+@mixin break-word {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+@mixin content-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
