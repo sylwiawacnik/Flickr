@@ -11,6 +11,7 @@
   display: flex;
 
   &__image {
+    border: 2px solid $primary-color;
     max-height: 90px;
     max-width: 120px;
 
