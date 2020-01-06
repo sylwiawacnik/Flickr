@@ -1,0 +1,22 @@
+@import "variables";
+@import "mixins";
+
+page-header {
+  height: 90px;
+  background-color: $third-color;
+  margin: 10px 0 20px 0;
+  @include content-center;
+
+  .header {
+    @include content-center;
+
+    @media (min-width: $break-point-s) {
+      justify-content: flex-start;
+    }
+
+    @media (min-width: $break-point-m) {
+      max-width: 1024px;
+      width: 100%;
+    }
+  }
+}

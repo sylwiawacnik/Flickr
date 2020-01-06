@@ -1,13 +1,7 @@
 import '../scss/flickr.scss';
-import Logo from "../images/logo-flick.png";
+import PageHeader from './page-header';
 
-
-let header = document.getElementById('header');
-header.classList.add('header');
-let logo = document.createElement('img');
-logo.setAttribute('src', 'dist/' + Logo);
-header.append(logo);
-
+customElements.define('page-header', PageHeader);
 
 let description = localStorage.getItem('itemDescription');
 document.getElementById('flickr').innerHTML = description;
