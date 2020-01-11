@@ -6,16 +6,16 @@ class FlickrList extends HTMLElement {
     }
 
     connectedCallback(){
-        this.myCallback = this.myCallback.bind(this);
+        this.createRows = this.createRows.bind(this);
         $.ajax({
             url: 'https://api.flickr.com/services/feeds/photos_public.gne',
             dataType: 'jsonp',
             data: {"format": "json"},
             jsonpCallback: 'jsonFlickrFeed'
-        }).then(this.myCallback);
+        }).then(this.createRows);
     };
 
-    myCallback(json) {
+    createRows(json) {
         var items = json.items;
 
         items.forEach((item) => {

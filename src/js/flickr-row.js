@@ -24,7 +24,7 @@ class FlickrRow extends HTMLElement {
     }
 
     render(item) {
-        const {media, title, author_id, link, published, description} = item; //deconstruction assignemnt ;)
+        const {media, title, author_id, link, published, description} = item;
         let publishedDate = moment(published).format('Do MMM YYYY [at] h:mm');
 
         this.itemDescription = description;
