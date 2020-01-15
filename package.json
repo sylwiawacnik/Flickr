@@ -6,7 +6,9 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "start": "node server.js",
+    "heroku-postbuild": "webpack -p"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +29,7 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "moment": "^2.24.0"
   }
 }

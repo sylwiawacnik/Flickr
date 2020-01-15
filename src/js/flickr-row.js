@@ -20,7 +20,7 @@ class FlickrRow extends HTMLElement {
     onClick(e) {
         e.preventDefault();
         localStorage.setItem('itemDescription', this.itemDescription);
-        window.open('/Flickr/flickr-index.html', '_blank');
+        window.open('/flickr-index.html', '_blank');
     }
 
     render(item) {
